@@ -116,6 +116,7 @@ def test_select_many_with_or_filter():
         print()
 
 # busca pelo object_id 
+@pytest.mark.skip(reason="interação com o banco")  
 def test_select_by_object_dict():
     orders_repository = OrdersRepository(conn)
     # não tenho filtro pois so irei buscar pelo object_id
@@ -123,4 +124,39 @@ def test_select_by_object_dict():
     response = orders_repository.select_by_object_dict(object_id)
     print()
     print(response)
+# edita um registro
+@pytest.mark.skip(reason="interação com o banco")     
+def test_edit_registry():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_registry()
+
+@pytest.mark.skip(reason="interação com o banco")    
+# edita muitos registros
+def test_many_registries():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_many_registries()
+    
+@pytest.mark.skip(reason="interação com o banco")  
+# edita um registro com incremento  
+def test_edit_registry_with_increment():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_registry_with_increment()
+    
+@pytest.mark.skip(reason="interação com o banco")  
+# edita um registro com decremento
+def test_edit_registry_with_decrement():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.edit_registry_with_decrement()  
+
+@pytest.mark.skip(reason="interação com o banco")  
+# deleta um registro 
+def test_delete_registry():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.delete_registry()  
+    
+@pytest.mark.skip(reason="interação com o banco")     
+# deleta vários registros
+def test_delete_many_registries():
+    orders_repository = OrdersRepository(conn)
+    orders_repository.delete_many_registries()  
     
