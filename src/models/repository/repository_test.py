@@ -1,8 +1,10 @@
+# pylint: disable-all
+
 import pytest
-from pymongo import MongoClient
 from .orders_repository import OrdersRepository
 
 # não consegui fazer o mock do banco de dados, então criei uma classe para fazer a conexão com o banco de dados
+'''
 class DBConnectionHandler:
     def __init__(self) -> None:
         self.__connection_string = 'mongodb://{}:{}@{}:{}/?authSource=admin'.format(
@@ -20,11 +22,13 @@ class DBConnectionHandler:
         self.__db_connection = self.__client[self.__database_name]
         
     def get_db_connection(self):
-        return self.__db_connection     
+        return self.__db_connection 
+'''
+    
 
-db_connection_handler = DBConnectionHandler()
-db_connection_handler.connect_to_db()
-conn = db_connection_handler.get_db_connection()
+# db_connection_handler = DBConnectionHandler()
+# db_connection_handler.connect_to_db()
+# conn = db_connection_handler.get_db_connection()
 
 # insere um documento
 @pytest.mark.skip(reason="interação com o banco")
