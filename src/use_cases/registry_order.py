@@ -15,7 +15,7 @@ class RegistryOrder:
             self.__registry_order(new_order)
             
             return self.__format_reponse()
-        except Exception as exception:
+        except Exception as exception: # Fazer um teste unitario para esse erro
             return HttpResponse(
                 body= { "error": exception }, 
                 status_code=400

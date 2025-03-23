@@ -18,4 +18,7 @@ class DBConnectionHandler:
         
     def get_db_connection(self):
         return self.__db_connection     
+    
+db_connection_handler = DBConnectionHandler() # Dessa forma na hora de importar DBConnectionHandler vai ter apenas um gerente de conexões
+        
         
