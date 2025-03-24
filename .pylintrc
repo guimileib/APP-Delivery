@@ -11,6 +11,7 @@ disable=
       C0301, # Line too long
       R0903, # too-few-public-methods
       W0719, # proad-exception-raised
+      C0321, # multiple-statement
 
 # Analyse import fallback blocks. This can be used to support both Python 2 and
 # 3 compatible code, which means that the block might have code that exists
