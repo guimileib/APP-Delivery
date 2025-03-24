@@ -44,12 +44,11 @@ class OrdersRepository(OrdersRepositoryInterface):
         data = collection.find_one({"_id": ObjectId(object_id)}) # utilizo o 'find_one' para pela unicidade do objectid
         return data
     # Update
-    def edit_registry(self) -> None:
+    def edit_registry(self, order_id: str, update_fields: dict) -> None:
         collection = self.__db_connetion.get_collection(self.__collection_name)    
         collection.update_one(
-            { "_id": ObjectId("67c9d88c88664a49cfa11e7d")}, # filtros - busca
-            { "$set": { "itens.pizza.quantidade": 30}} # edição    
-            #{ "$set": { "cupom": True}} # edição 
+            { "_id": ObjectId(order_id)}, # filtros - busca
+            { "$set": update_fields} # edição    
         )
     
     
