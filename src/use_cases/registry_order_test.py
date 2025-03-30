@@ -30,7 +30,7 @@ def test_registry():
         }
     )   
     
-    reponse = registry_order.registry(mock_registry)
+    response = registry_order.registry(mock_registry)
     
     assert "name" in repo.insert_document_att["document"]
     assert "address" in repo.insert_document_att["document"]
